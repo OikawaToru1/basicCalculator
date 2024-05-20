@@ -11,46 +11,53 @@
     <center><div id="container">
         <div class="display">
             <div class="dsp" id="ans">0</div>
-            <div class="dsp" id="calculation">1</div>
+            <div class="method">
+                <div class="dsp" id="calculation"></div>
+                <div class="dsp" id="operator"></div>
+                <div class="dsp" id="num2"></div>
+            </div>
+            
     </div>
     <div class="buttons">
-        <button class="btn">%</button>
-        <button class="btn">CE</button>
-        <button class="btn">C</button>
-        <button class="btn">X</button>
+        <button class="btn" id="modulo">%</button>
+        <button class="btn" id="clearScreen">CE</button>
+        <button class="btn" id="clear">C</button>
+        <button class="btn" id="remove">X</button>
     </div>
         <div class="buttons">
-        <button class="btn">1/x</button>
-        <button class="btn">x²</button>
-        <button class="btn">√x</button>
-        <button class="btn">/</button>
+        <button class="btn" id="inverse">1/x</button>
+        <button class="btn" id="square">x²</button>
+        <button class="btn" id="root">√x</button>
+        <button class="btn" id="operator">/</button>
         </div>
         <div class="buttons">
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn">*</button>
+            <button class="btn"id="number" value="7">7</button>
+            <button class="btn"id="number" value="8">8</button>
+            <button class="btn"id="number" value="9">9</button>
+            <button class="btn" id="operator" value="*">*</button>
         </div>
         <div class="buttons">
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn">-</button>
+            <button class="btn" id="number" value="4">4</button>
+            <button class="btn" id="number" value="5">5</button>
+            <button class="btn" id="number" value="6">6</button>
+            <button class="btn" id="operator" value="-">-</button>
         </div>
         <div class="buttons">
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn">+</button>
+            <button class="btn" id="number" value="1">1</button>
+            <button class="btn" id="number" value="2">2</button>
+            <button class="btn" id="number" value="3">3</button>
+            <button class="btn" id="operator" value="+">+</button>
         </div>
         <div class="buttons">
-            <button class="btn">+/-</button>
-            <button class="btn">0</button>
-            <button class="btn">.</button>
-            <button class="btn">=</button>
+            <button class="btn" id="modulus">+/-</button>
+            <button class="btn" id="number" value="0">0</button>
+            <button class="btn" id="operator" value=".">.</button>
+            <button class="btn" id="operate">=</button>
         </div>
     </div>
 </center>
+
+<script src="script.js"></script>
 
 </body>
 </html>

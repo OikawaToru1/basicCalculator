@@ -2,7 +2,7 @@ const calculation = document.getElementById("calculation");
 const answer = document.getElementById("ans");
 const operator = document.getElementById("operator");
 const num = document.getElementById("num2");
-
+const clear = document.getElementById("clear");
 
 let num1=0, num2 =0;
 let count =1;
@@ -53,6 +53,10 @@ function calc()
         {
             mult(num1,num2);
         }
+    else if (opt == "/")
+        {
+            div(num1,num2);
+        }
 }
 
 function sum(n1,n2)
@@ -84,3 +88,10 @@ function div(n1,n2)
 }
 
 
+clear.addEventListener("click",()=>{
+    calculation.innerHTML="";
+    answer.innerHTML= "0";
+    operator.innerHTML="";
+    num.innerHTML="";
+
+})

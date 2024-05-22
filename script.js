@@ -3,7 +3,7 @@ const answer = document.getElementById("ans");
 const operator = document.getElementById("operator");
 const num = document.getElementById("num2");
 const clear = document.getElementById("clear");
-
+const remove = document.getElementById("remove");
 let num1=0, num2 =0;
 let count =1;
 
@@ -22,10 +22,10 @@ buttons.forEach((btn)=>{
           operator.innerHTML= btn.value;
           count =0;
         }
-        else if(btn.id == "number")
+        else if(btn.id == "number" && count ==0)
         {
             num.value = btn.value;
-            num.innerHTML = btn.value;
+            num.innerHTML = num.innerHTML + btn.value;
 
         }
         else
@@ -94,4 +94,23 @@ clear.addEventListener("click",()=>{
     operator.innerHTML="";
     num.innerHTML="";
 
-})
+});
+
+remove.addEventListener("click",()=>
+{
+                    if (num.innerHTML !="")
+                        {
+                            num.innerHTML="";
+                            count =0;
+                        }
+                    else if (operator.innerHTML != "")
+                        {
+                            operator.innerHTML="";
+                        }
+                    else
+                    {
+                        calculation.innerHTML="";
+                        count =1;
+                    }
+                }
+)

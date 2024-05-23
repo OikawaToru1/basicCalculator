@@ -6,6 +6,7 @@ const clear = document.getElementById("clear");
 const remove = document.getElementById("remove");
 let num1=0, num2 =0;
 let count =1;
+let test1=0,test2=0;
 let calculationDOne = false;
 
 
@@ -17,6 +18,7 @@ buttons.forEach((btn)=>{
         {   
             calculation.innerHTML = calculation.innerHTML + btn.value;
             calculation.value = btn.value;
+            test1 = calculation.value;
         }
         else if(btn.id == "operator" && !calculationDOne){
           operator.value = btn.value;
@@ -27,6 +29,7 @@ buttons.forEach((btn)=>{
         {
             num.value = btn.value;
             num.innerHTML = num.innerHTML + btn.value;
+            test2 = num.value;
 
         }
         else if(btn.id=="operate")
@@ -74,9 +77,21 @@ function calc()
             div(num1,num2);
         }
     else if (opt == "%")
-    {
-
-    }
+        {
+            if(test1!=0 && test2==0)
+                {
+                    percent(test1);
+                }
+            else if(test1==0 && ntest!=0)
+                {
+                    percent(test2);
+                }
+            else 
+                {
+                    calc();
+                    percent(answer.value)
+                }
+        }
 }
 
 function sum(n1,n2)
@@ -110,9 +125,9 @@ function div(n1,n2)
     calculationDOne = true;
     return dv;
 }
-function percent(n1)
+function percent(num)
 {
-    let dv = n1/n2;
+    let dv = num/100 ;
     answer.innerHTML = dv;
     calculationDOne = true;
     return dv;
@@ -124,6 +139,7 @@ clear.addEventListener("click",()=>{
     answer.innerHTML= "0";
     operator.innerHTML="";
     num.innerHTML="";
+    calculationDOne = false;
 
 });
 
